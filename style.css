@@ -1,0 +1,157 @@
+:root{
+  --bg: #f4f1ea;
+  --card: #fffdf8;
+  --ink: #2b2823;
+  --ink-dim: #6f6a5e;
+  --rule: #d8d2c2;
+  --accent: #a13d2c;
+  --accent-soft: #f1e1da;
+  --bot-bubble: #ece6d8;
+  --user-bubble: #2b2823;
+  --font-display: "Georgia", "Times New Roman", serif;
+  --font-body: "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  padding: 36px 20px 60px;
+}
+.wrap{ max-width: 880px; margin: 0 auto; }
+.masthead{
+  text-align:center;
+  margin-bottom: 30px;
+  border-bottom: 3px double var(--rule);
+  padding-bottom: 20px;
+}
+.masthead .eyebrow{
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.masthead h1{
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 36px;
+  margin: 0;
+}
+.masthead p{ color: var(--ink-dim); font-size: 14px; margin: 8px 0 0; }
+
+.layout{
+  display:grid;
+  grid-template-columns: 280px 1fr;
+  gap: 22px;
+}
+@media (max-width: 760px){ .layout{ grid-template-columns: 1fr; } }
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+
+.kb-card{ padding: 18px; display:flex; flex-direction:column; gap: 12px; height: 560px; }
+.kb-head{ display:flex; justify-content: space-between; align-items: baseline; }
+.kb-head h2{ font-family: var(--font-display); font-size: 17px; font-weight:400; margin:0; }
+.kb-count{ font-size: 12px; color: var(--ink-dim); }
+.kb-list{ flex:1; overflow-y: auto; display:flex; flex-direction:column; gap: 8px; padding-right: 4px; }
+.kb-item{
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 8px 10px;
+  font-size: 12.5px;
+  position: relative;
+}
+.kb-item .q{ font-weight: bold; margin: 0 0 3px; padding-right: 18px; }
+.kb-item .a{ color: var(--ink-dim); margin: 0; }
+.kb-item .rm{
+  position:absolute; top: 6px; right: 6px;
+  border:none; background:none; color: var(--ink-dim);
+  cursor:pointer; font-size: 13px; line-height:1;
+}
+.kb-item .rm:hover{ color: var(--accent); }
+.kb-add{ border-top: 1px solid var(--rule); padding-top: 12px; display:flex; flex-direction:column; gap: 6px; }
+.kb-add input, .kb-add textarea{
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  padding: 7px 9px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--bg);
+  color: var(--ink);
+  resize: none;
+  outline: none;
+}
+.kb-add textarea{ height: 44px; }
+.kb-add button{
+  background: var(--accent);
+  color: #fff;
+  border:none;
+  border-radius: 3px;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+}
+.kb-add button:hover{ opacity: 0.9; }
+
+.chat-card{ display:flex; flex-direction:column; height: 560px; }
+.chat-head{
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 18px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-head h2{ font-family: var(--font-display); font-size: 17px; font-weight: 400; margin:0; }
+.chat-head .tag{ font-size: 11px; color: var(--ink-dim); font-family: var(--font-mono); }
+.chat-log{ flex:1; overflow-y: auto; padding: 18px; display:flex; flex-direction:column; gap: 14px; }
+.msg{ max-width: 78%; font-size: 14px; line-height: 1.5; }
+.msg.bot{ align-self: flex-start; }
+.msg.user{ align-self: flex-end; }
+.bubble{ padding: 10px 13px; border-radius: 10px; }
+.msg.bot .bubble{ background: var(--bot-bubble); color: var(--ink); border-top-left-radius: 3px; }
+.msg.user .bubble{ background: var(--user-bubble); color: #fff; border-top-right-radius: 3px; }
+.msg .meta{ font-size: 10.5px; color: var(--ink-dim); margin-top: 4px; font-family: var(--font-mono); }
+.chat-input-row{
+  border-top: 1px solid var(--rule);
+  padding: 12px 14px;
+  display:flex;
+  gap: 8px;
+}
+.chat-input-row input{
+  flex:1;
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 20px;
+  outline: none;
+  background: var(--bg);
+  color: var(--ink);
+}
+.chat-input-row button{
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 0 20px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.chat-input-row button:hover{ opacity: 0.9; }
+.footnote{
+  text-align:center;
+  font-size: 12px;
+  color: var(--ink-dim);
+  margin-top: 26px;
+}
+.footnote code{ font-family: var(--font-mono); background: var(--accent-soft); padding: 1px 5px; border-radius: 3px; }

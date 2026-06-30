@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Index Card — FAQ Chatbot</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="eyebrow">Task 2 — Knowledge desk</div>
+    <h1>Index Card</h1>
+    <p>A small FAQ chatbot: type a question, it tokenizes, scores against the card file, and answers with the closest match.</p>
+  </div>
+
+  <div class="layout">
+
+    <div class="card kb-card">
+      <div class="kb-head">
+        <h2>FAQ card file</h2>
+        <span class="kb-count"><span id="faqCount">0</span> entries</span>
+      </div>
+      <div class="kb-list" id="kbList"></div>
+      <div class="kb-add">
+        <input type="text" id="newQ" placeholder="New question…" maxlength="200" />
+        <textarea id="newA" placeholder="Its answer…" maxlength="500"></textarea>
+        <button id="addFaqBtn" type="button">Add to card file</button>
+      </div>
+    </div>
+
+    <div class="card chat-card">
+      <div class="chat-head">
+        <h2>Ask the desk</h2>
+        <span class="tag">cosine similarity</span>
+      </div>
+      <div class="chat-log" id="chatLog"></div>
+      <div class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Ask a question…" />
+        <button id="sendBtn" type="button">Send</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
