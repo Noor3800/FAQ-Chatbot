@@ -1,4 +1,4 @@
-# Task 2 — Chatbot for FAQs ("Index Card")
+# Chatbot for FAQs ("Index Card")
 
 A small FAQ chatbot that matches user questions to a knowledge base using TF-IDF and cosine similarity — entirely in the browser, no server or external NLP library required.
 
